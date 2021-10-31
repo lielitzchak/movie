@@ -36,9 +36,23 @@ body {
     box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
   }
 }
-/*.single_movie {
-   padding: 2%; 
-}*/
+#searchSection {
+  display: flex;
+  justify-content: center;
+  /* margin-top: 15%; */
+  margin: auto;
+  width: 50%;
+  /* border: 3px solid green; */
+  padding-top: 4%;
+}
+#inp {
+  width: 80%;
+  height: 30px;
+  border-radius: 3px;
+}
+#btn {
+  width: 15%;
+}
 img {
   border-radius: 13px 13px 0 0;
 }
@@ -62,7 +76,6 @@ p {
   top: 0;
   animation: scale-up-center 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 }
-
 .allMovies:hover .all_text2 {
   padding: 1%;
   display: block;
