@@ -30,6 +30,9 @@ btn.onclick = () => {
     if (res.results.length == []) {
       return errorFunction();
     }
+    if (res.type == "Unknown") {
+      return "not good";
+    }
     if (inp.value.length < 3) {
       showAll.innerHTML = "<h1>to short</h1>";
     }
@@ -49,3 +52,13 @@ btn.onclick = () => {
     }
   });
 };
+// function fesfs() {
+//   type = {
+//     TV,
+//     ONA,
+//     Music,
+//     Special,
+//     Movie,
+//     OVA,
+//   };
+// }
