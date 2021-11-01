@@ -36,6 +36,18 @@ body {
     box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
   }
 }
+.single_movie {
+  animation: scale-up-hor-center 0.5s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+@keyframes scale-up-hor-center {
+  0% {
+    transform: scaleX(0.4);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+
 #searchSection {
   display: flex;
   justify-content: center;

@@ -24,7 +24,7 @@ function hideLoading() {
   imgLoading.style.display = "none";
 }
 
-btn.onclick = () => {
+inp.oninput = () => {
   showAll.innerHTML = "";
   getApi(`${url}search/anime?q=${inp.value}`).then((res) => {
     if (res.results.length == []) {
@@ -55,25 +55,10 @@ btn.onclick = () => {
 // function fesfs() {
 //   type = {
 //     TV,
-//     ONA,
+//     ONA ,
 //     Music,
 //     Special,
 //     Movie,
 //     OVA,
 //   };
 // }
-let animateButton = function (e) {
-  e.preventDefault;
-  //reset animation
-  e.target.classList.remove("animate");
-  e.target.classList.add("animate");
-  setTimeout(function () {
-    e.target.classList.remove("animate");
-  }, 700);
-};
-
-var bubblyButtons = document.getElementsByClassName("bubbly-button");
-
-for (let i = 0; i < bubblyButtons.length; i++) {
-  bubblyButtons[i].addEventListener("click", animateButton, false);
-}
