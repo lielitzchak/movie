@@ -47,7 +47,10 @@ body {
     transform: scaleX(1);
   }
 }
-
+#imgSearch {
+  /* width:%; */
+  height: auto;
+}
 #searchSection {
   display: flex;
   justify-content: center;
@@ -59,7 +62,7 @@ body {
 }
 #inp {
   width: 80%;
-  height: 30px;
+  height: 40px;
   border-radius: 3px;
 }
 #btn {
@@ -105,4 +108,10 @@ p {
   100% {
     transform: scale(1);
   }
+}
+
+#imgLogo {
+  margin: auto;
+  width: 20%;
+  padding: 10px;
 }

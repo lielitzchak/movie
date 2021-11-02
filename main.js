@@ -2,6 +2,8 @@ const url = "https://api.jikan.moe/v3/";
 let inp = document.getElementById("inp");
 let btn = document.getElementById("btn");
 const showAll = document.getElementById("showAll");
+
+// ! add promise to control response and reject
 async function getApi(api) {
   try {
     showLoading();
