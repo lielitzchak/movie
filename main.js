@@ -20,6 +20,7 @@ async function showAll() {
     return error;
   }
 }
+
 showAll().then((response) => {
   if(response.length<50){
     console.log(response);
