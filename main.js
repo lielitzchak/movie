@@ -20,8 +20,10 @@ async function showAll() {
     return error;
   }
 }
+//! still need to work on that.. add more movie to all loading page
+//! add loading img to the screen
 showAll().then((response) => {
-  for (let i = 0; i <80; i++) {
+  for (let i = 0; i < 80; i++) {
     console.log(response[i]._embedded.show);
     toShow.innerHTML += `
             <section class="sectionMovie">
