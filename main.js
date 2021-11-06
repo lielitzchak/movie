@@ -1,66 +1,56 @@
-const url = "https://api.jikan.moe/v3/";
-let inp = document.getElementById("inp");
-let btn = document.getElementById("btn");
-const showAll = document.getElementById("showAll");
-
-// ! add promise to control response and reject
-async function getApi(api) {
+const BASIC_API = "https://api.tvmaze.com";
+let ALL_SHOW = "/schedule/full";
+let toShow = document.getElementById("toShow");
+let searchInp = document.getElementById("searchInp");
+let searchBtn = document.getElementById("searchBtn");
+const Show_single_search = "/search/shows?q=";
+async function getApi(api, search, toLook) {
   try {
-    showLoading();
-    return await fetch(api).then((res) => {
+    return await fetch(`${api}${search}${toLook}`).then((response) => {
+      return response.json();
+    });
+  } catch (error) {}
+}
+async function showAll() {
+  try {
+    return await fetch(`https://api.tvmaze.com/schedule/full`).then((res) => {
       return res.json();
     });
   } catch (error) {
     return error;
-  } finally {
-    hideLoading();
   }
 }
-function errorFunction() {
-  showAll.innerHTML = `<img src="./png-transparent-fate-grand-order-fate-stay-night-http-404-server-404-error-purple-violet-text-removebg-preview.png">`;
-}
-function showLoading() {
-  showAll.innerHTML = `<img id="imgLoading" src="https://i.pinimg.com/originals/75/8f/1c/758f1cd8cede9c3e4711306fc030f4ce.gif"/>`;
-}
-function hideLoading() {
-  imgLoading.style.display = "none";
-}
+showAll().then((response) => {
+  if(response.length<50){
+    console.log(response);
+  }
+  for (const key in response) {
+    if (Object.hasOwnProperty.call(response, key)) {
+      console.log(key);
+    }
+  }
 
-inp.oninput = () => {
-  showAll.innerHTML = "";
-  getApi(`${url}search/anime?q=${inp.value}`).then((res) => {
-    if (res.results.length == []) {
-      return errorFunction();
-    }
-    if (res.type == "Unknown") {
-      return "not good";
-    }
-    if (inp.value.length < 3) {
-      showAll.innerHTML = "<h1>to short</h1>";
-    }
-    for (let movie of res.results) {
-      showAll.innerHTML += `
-          <section class="allMovies">
-          <article class="single_movie">
-          <a href=" ${movie.url}">
-          <img class="imgPhotos" src="${movie.image_url}" alt=""></a>
-          <h2>${movie.title}</h2>
-          <h2><b>episodes:</b>${movie.episodes}</h2>
-          <P class="all_text1"><b>synopsis:</b> ${movie.synopsis}</p> <br>
-          <p class="all_text2"><b>type:</b>${movie.type}</p> <br>
-          <p class="all_text3"><b>episodes</b>${movie.episodes}</p> <br>
-          </article>
-          </section>`;
+});
+
+searchBtn.onclick = () => {
+  toShow.innerHTML = "";
+  getApi(BASIC_API, Show_single_search, searchInp.value).then((res) => {
+    for (let i = 0; i < res.length; i++) {
+      console.log(i);
+      toShow.innerHTML += `
+              <section class="sectionMovie">
+                  <img class="allImg" src="${res[i].show.image.original}" alt="">
+                    <article class="details toHover">
+                          <h2 class="toAllCss">${res[i].show.name}</h2>  
+                          <br>
+                          <h4 class="toAllCss"><b>language:</b>${res[i].show.language}</h4>
+                          <br>
+                          <p class="toAllCss">${res[i].show.status}</p>
+                          <p class="toAllCss">${res[i].show.type}</p>
+                          <button class="seeMovieBtn"><a href="${res[i].show.url}">see movie<i class="far fa-eye"></i></a></button>
+                    </article>
+              </section>
+      `;
     }
   });
 };
-// function fesfs() {
-//   type = {
-//     TV,
-//     ONA ,
-//     Music,
-//     Special,
-//     Movie,
-//     OVA,
-//   };
-// }
