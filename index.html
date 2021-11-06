@@ -4,19 +4,20 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>movies</title>
+    <title>movie</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <link rel="stylesheet" href="./style.css" />
-    <link rel="stylesheet/less" type="text/css" href="styles.less" />
   </head>
   <body>
-    <div id="imgLogo"><img src="./logo.png" alt="" /></div>
-    <section id="searchSection">
-      <input id="inp" placeholder="What are you looking for?" type="text" />
-      <button class="bubbly-button" id="btn">
-        <img id="imgSearch" src="./icons8-search-30.png" alt="" />
-      </button>
-    </section>
-    <div id="showAll"></div>
+    <div id="searchDiv">
+      <input id="searchInp" type="text" />
+      <button id="searchBtn">click</button>
+    </div>
+
+    <div id="toShow"></div>
     <script src="./main.js"></script>
   </body>
 </html>
