@@ -20,6 +20,7 @@ async function showAll() {
     return error;
   }
 }
+
 //! still need to work on that.. add more movie to all loading page
 //! add loading img to the screen
 showAll().then((response) => {
