@@ -1,48 +1,76 @@
-const BASIC_API = "moviesmern.herokuapp.com";
-let ALL_SHOW = "/schedule/full";
-let toShow = document.getElementById("toShow");
-let searchInp = document.getElementById("searchInp");
-let searchBtn = document.getElementById("searchBtn");
-const Show_single_search = "/search/shows?q=";
-async function getApi(api, search, toLook) {
-  try {
-    return await fetch(`${api}${search}${toLook}`).then((response) => {
-      return response.json();
-    });
-  } catch (error) {}
+function addHeader(div, category) {
+  div.innerHTML += `
+    <header>
+      <section id="headers">
+        <img class="imgHeaders"  src="https://did.li/LYC5q" alt="tech carrer logo" /><img class="imgHeaders"
+          src="https://did.li/jlxlC"
+          alt="indicom"
+        />
+      </section>
+      <nav id="navbar">
+        <ul>
+          <li>
+            <a href=""><ul>home page</ul></a>
+            <a href=""><ul>Tabs</ul></a>
+            <a href=""><ul>Adding a movie</ul></a>
+            <a href=""><ul>table</ul></a>
+          </li>
+        </ul>
+      </nav>
+    </header>`;
 }
-async function showAll() {
-  try {
-    return await fetch(`https://api.tvmaze.com/schedule/full`).then((res) => {
-      return res.json();
-    });
-  } catch (error) {
-    return error;
-  }
-}
+addHeader(divHeaderHomePage);
+
+// ! //////////////////////////////////////////////////////
+// !  //////////////////////////////////////////////////////
+// ! //////////////////////////////////////////////////////
+// ! //////////////////////////////////////////////////////
+// ! //////////////////////////////////////////////////////
+// const BASIC_API = "moviesmern.herokuapp.com";
+// let ALL_SHOW = "/schedule/full";
+// let toShow = document.getElementById("toShow");
+// let searchInp = document.getElementById("searchInp");
+// let searchBtn = document.getElementById("searchBtn");
+// const Show_single_search = "/search/shows?q=";
+// async function getApi(api, search, toLook) {
+//   try {
+//     return await fetch(`${api}${search}${toLook}`).then((response) => {
+//       return response.json();
+//     });
+//   } catch (error) {}
+// }
+// async function showAll() {
+//   try {
+//     return await fetch(`https://api.tvmaze.com/schedule/full`).then((res) => {
+//       return res.json();
+//     });
+//   } catch (error) {
+//     return error;
+//   }
+// }
 
 //! still need to work on that.. add more movie to all loading page
 //! add loading img to the screen
 
-showAll().then((response) => {
-  for (let i = 0; i < 80; i++) {
-    console.log(response[i]._embedded.show);
-    toShow.innerHTML += `
-            <section class="sectionMovie">
-                <img class="allImg" src="${response[i]._embedded.show.image.original}" alt="">
-                  <article class="details toHover">
-                        <h2 class="toAllCss">${response[i]._embedded.show.name}</h2>  
-                        <br>
-                        <h4 class="toAllCss"><b>language:</b>${response[i]._embedded.show.language}</h4>
-                        <br>
-                        <p class="toAllCss">${response[i]._embedded.show.status}</p>
-                        <p class="toAllCss">${response[i]._embedded.show.type}</p>
-                        <button class="seeMovieBtn"><a href="${response[i]._embedded.show.url}">see movie<i class="far fa-eye"></i></a></button>
-                  </article>
-            </section>
-    `;
-  }
-});
+// showAll().then((response) => {
+//   for (let i = 0; i < 80; i++) {
+//     console.log(response[i]._embedded.show);
+//     toShow.innerHTML += `
+//             <section class="sectionMovie">
+//                 <img class="allImg" src="${response[i]._embedded.show.image.original}" alt="">
+//                   <article class="details toHover">
+//                         <h2 class="toAllCss">${response[i]._embedded.show.name}</h2>
+//                         <br>
+//                         <h4 class="toAllCss"><b>language:</b>${response[i]._embedded.show.language}</h4>
+//                         <br>
+//                         <p class="toAllCss">${response[i]._embedded.show.status}</p>
+//                         <p class="toAllCss">${response[i]._embedded.show.type}</p>
+//                         <button class="seeMovieBtn"><a href="${response[i]._embedded.show.url}">see movie<i class="far fa-eye"></i></a></button>
+//                   </article>
+//             </section>
+//     `;
+//   }
+// });
 
 // genres: (3) ['Action', 'Anime', 'Horror']
 // image: {medium: 'https://static.tvmaze.com/uploads/images/medium_portrait/362/906901.jpg', original: 'https://static.tvmaze.com/uploads/images/original_untouched/362/906901.jpg'}
@@ -57,25 +85,21 @@ showAll().then((response) => {
 // bring a new mystery to light.</p><p>(Source: MAL News)</p>";
 // url: "https://www.tvmaze.com/shows/18314/hitori-no-shita-the-outcast";
 
-searchBtn.onclick = () => {
-  toShow.innerHTML = "";
-  getApi(BASIC_API, Show_single_search, searchInp.value).then((res) => {
-    for (let i = 0; i < res.length; i++) {
-      console.log(i);
-      toShow.innerHTML += `
-              <section class="sectionMovie">
-                  <img class="allImg" src="${res[i].show.image.original}" alt="">
-                    <article class="details toHover">
-                          <h2 class="toAllCss">${res[i].show.name}</h2>  
-                          <br>
-                          <h4 class="toAllCss"><b>language:</b>${res[i].show.language}</h4>
-                          <br>
-                          <p class="toAllCss">${res[i].show.status}</p>
-                          <p class="toAllCss">${res[i].show.type}</p>
-                          <button class="seeMovieBtn"><a href="${res[i].show.url}">see movie<i class="far fa-eye"></i></a></button>
-                    </article>
-              </section>
-      `;
-    }
-  });
-};
+// searchBtn.onclick = () => {
+//   toShow.innerHTML = "";
+//   getApi(BASIC_API, Show_single_search, searchInp.value).then((res) => {
+//     for (let i = 0; i < res.length; i++) {
+//       console.log(i);
+//       toShow.innerHTML += `
+//               <section class="sectionMovie">
+//                   <img class="allImg" src="${res[i].show.image.original}" alt="">
+//                     <article class="details toHover">
+//                           <h2 class="toAllCss">${res[i].show.name}</h2>
+//                           <br>
+//                           <button class="seeMovieBtn"><a href="${res[i].show.url}">see movie<i class="far fa-eye"></i></a></button>
+//                     </article>
+//               </section>
+//       `;
+//     }
+//   });
+// };
