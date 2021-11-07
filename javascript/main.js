@@ -1,4 +1,4 @@
-function addHeader(div, category) {
+function addHeader(div) {
   div.innerHTML += `
     <header>
       <section id="headers">
@@ -10,10 +10,10 @@ function addHeader(div, category) {
       <nav id="navbar">
         <ul>
           <li>
-            <a href=""><ul>home page</ul></a>
-            <a href=""><ul>Tabs</ul></a>
-            <a href=""><ul>Adding a movie</ul></a>
-            <a href=""><ul>table</ul></a>
+            <a href="/index.html"><ul>home page</ul></a>
+            <a href="../html/tabs.html"><ul>Tabs</ul></a>
+            <a href="../html/AddingMovie.html"><ul>Adding a movie</ul></a>
+            <a href="../html/table.html"><ul>table</ul></a>
           </li>
         </ul>
       </nav>
