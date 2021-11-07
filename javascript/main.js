@@ -26,7 +26,7 @@ addHeader(divHeaderHomePage);
 // ! //////////////////////////////////////////////////////
 // ! //////////////////////////////////////////////////////
 // ! //////////////////////////////////////////////////////
-// const BASIC_API = "moviesmern.herokuapp.com";
+const BASIC_API = "https://moviesmern.herokuapp.com";
 // let ALL_SHOW = "/schedule/full";
 // let toShow = document.getElementById("toShow");
 // let searchInp = document.getElementById("searchInp");
