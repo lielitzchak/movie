@@ -1,0 +1,115 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  overflow-x: hidden;
+  width: 100vw;
+  height: 100vh;
+  /* background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%); */
+}
+#headers {
+  background-color: #6c4a4a;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+}
+#navbar {
+  background-color: #c89595;
+}
+#navbar ul li {
+  margin-left: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.imgHeaders {
+  width: 5%;
+  padding: 0.2%;
+  height: auto;
+}
+#main {
+  background-color: #ddbebe;
+}
+#imgHome {
+  height: 100px;
+}
+.seeMovieBtn,
+a {
+  margin-top: 44px;
+  text-decoration: none;
+  color: black;
+  bottom: 0;
+  margin: 8px;
+  width: 80%;
+  height: 25px;
+  border-radius: 22px;
+}
+/* #searchInp {
+  border-radius: 5px;
+  width: 80%;
+  height: 30px;
+} */
+/* #searchBtn {
+  border-radius: 5px;
+  width: 10%;
+  height: 30px;
+} */
+
+/* #toShow {
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10%;
+  margin-top: 90px;
+} */
+/* .sectionMovie {
+  width: 15%;
+  margin-bottom: 15px;
+  padding: 0 15px;
+  margin: 0 0 15;
+  position: relative;
+  color: white;
+} */
+/* .sectionMovie:hover .toHover {
+  height: 100%;
+  display: block;
+  color: white;
+  border-radius: 6px;
+  background-color: rgba(0, 0, 0, 0.651);
+} */
+/* .details {
+  display: none;
+  position: absolute;
+  top: 0;
+  color: white;
+} */
+/* .details:hover {
+  display: block;
+  height: 100%;
+  background-color: black;
+  color: black;
+  top: 0;
+  border-radius: 6px;
+} */
+/* .toAllCss {
+  font-size: 97%;
+} */
+/* .allImg {
+  border-radius: 6px;
+  width: 100%;
+  height: 100%;
+} */
+/* #searchDiv {
+  margin: auto;
+  width: 50%;
+  margin-top: 70px;
+} */
+#toShow {
+  background-color: #ddbebe;
+}
+#footer {
+  background-color: #ededed;
+}
