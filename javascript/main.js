@@ -1,9 +1,13 @@
+const BASIC_API = "https://moviesmern.herokuapp.com";
+let allMovie = "/movies/all";
+let footer = document.getElementById("footer");
+let divHeaderHomePage = document.getElementById("divHeaderHomePage");
 function addHeader(div) {
   div.innerHTML += `
     <header>
       <section id="headers">
-        <img class="imgHeaders"  src="https://did.li/LYC5q" alt="tech carrer logo" /><img class="imgHeaders"
-          src="https://did.li/jlxlC"
+        <img class="imgHeaders"  src="../media/techCareere.png" alt="tech careere logo" /><img class="imgHeaders"
+          src="../media/indicome.png"
           alt="indicom"
         />
       </section>
@@ -21,12 +25,27 @@ function addHeader(div) {
 }
 addHeader(divHeaderHomePage);
 
+function showFooter() {
+  footer.innerHTML+=`
+  <img src="" alt="">
+  <img src="" alt="">
+  <img src="" alt="">
+  <img src="" alt="">`
+}
 // ! //////////////////////////////////////////////////////
 // !  //////////////////////////////////////////////////////
 // ! //////////////////////////////////////////////////////
 // ! //////////////////////////////////////////////////////
 // ! //////////////////////////////////////////////////////
-const BASIC_API = "https://moviesmern.herokuapp.com";
+async function movieFromApi(api, goTo, option) {
+  try {
+    return await fetch(`${api}${goTo}`, option).then((res) => {
+      return res.json();
+    });
+  } catch (error) {
+    return error;
+  }
+}
 // let ALL_SHOW = "/schedule/full";
 // let toShow = document.getElementById("toShow");
 // let searchInp = document.getElementById("searchInp");
