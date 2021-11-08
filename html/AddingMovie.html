@@ -5,11 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/style.css" />
   </head>
   <body>
     <header id="divHeaderHomePage"></header>
-    הוספת סרט
+    <main id="main">
+      <div id="toShow">
+        <section id="formMovie">
+          <form>
+            <label for="movieName">name of movie</label> <br />
+            <input id="movieName" type="text" /><br />
+            <label for="movieImg">image</label> <br />
+            <input id="movieImg" type="text" /><br />
+            <label for="movieSynopsis">synopsis</label> <br />
+            <input id="movieSynopsis" type="text" /><br />
+            <label for="movieLinkTo">linkToMovie</label> <br />
+            <input id="movieLinkTo" type="text" /><br />
+            <label for="movieRating">rating</label> <br />
+            <input id="movieRating" type="text" /><br />
+            <button id="btnFormMovie">click</button>
+          </form>
+        </section>
+      </div>
+    </main>
+    <footer id="footer"></footer>
     <script src="../javascript/main.js"></script>
+    <script src="../javascript/addNewMovie.js"></script>
   </body>
 </html>
