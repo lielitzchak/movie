@@ -7,6 +7,7 @@ body {
   overflow-x: hidden;
   width: 100vw;
   height: 100vh;
+  position: relative;
   /* background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%); */
 }
 #headers {
@@ -31,6 +32,8 @@ body {
   height: auto;
 }
 #main {
+  width: 100%;
+  height: 100%;
   background-color: #ddbebe;
 }
 #imgHome {
@@ -47,77 +50,64 @@ a {
   height: 25px;
   border-radius: 22px;
 }
-/* #searchInp {
-  border-radius: 5px;
-  width: 80%;
-  height: 30px;
-} */
-/* #searchBtn {
-  border-radius: 5px;
-  width: 10%;
-  height: 30px;
-} */
-
-/* #toShow {
-  padding: 10px;
-  display: flex;
-  flex-wrap: wrap;
-  margin: 10%;
-  margin-top: 90px;
-} */
-/* .sectionMovie {
-  width: 15%;
-  margin-bottom: 15px;
-  padding: 0 15px;
-  margin: 0 0 15;
-  position: relative;
-  color: white;
-} */
-/* .sectionMovie:hover .toHover {
-  height: 100%;
-  display: block;
-  color: white;
-  border-radius: 6px;
-  background-color: rgba(0, 0, 0, 0.651);
-} */
-/* .details {
-  display: none;
-  position: absolute;
-  top: 0;
-  color: white;
-} */
-/* .details:hover {
-  display: block;
-  height: 100%;
-  background-color: black;
-  color: black;
-  top: 0;
-  border-radius: 6px;
-} */
-/* .toAllCss {
-  font-size: 97%;
-} */
-/* .allImg {
-  border-radius: 6px;
-  width: 100%;
-  height: 100%;
-} */
-/* #searchDiv {
+#formMovie input {
+  width: auto;
+  height: 25px;
+  border-radius: 4px;
+}
+#formMovie button {
+  width: 54px;
+  height: 35px;
+  border-radius: 4px;
+}
+#formMovie {
   margin: auto;
-  width: 50%;
-  margin-top: 70px;
-} */
-/* #teble {
-  width: 100%;
+  width: 20%;
+  padding: 2%;
+  font-size: 30px;
+  border-radius: 14px;
+  animation: shadow-inset-center 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+@keyframes shadow-inset-center {
+  0% {
+    box-shadow: inset 0 0 0 0 rgba(0, 0, 0, 0);
+  }
+  100% {
+    box-shadow: inset 0 0 14px 0px rgba(0, 0, 0, 0.5);
+  }
+}
+#sectionToMoviesCart {
+  display: grid;
+  width: 98%;
   margin-left: 2%;
-} */
-/* #teble,
-tr th {
-  margin-top: 2%;
-} */
-#toShow {
-  background-color: #ddbebe;
+  grid-template-columns: repeat(3, 32%);
+  gap: 2px;
+}
+.moviesCart {
+  width: 100%;
+  height: auto;
+  background-color: red;
+  height: auto;
+  color: black;
+}
+.imgTabs {
+  width: auto;
+  height: 50px;
 }
 #footer {
   background-color: #ededed;
+  border-radius: 4px;
+  width: 5%;
+  height: 36%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding-top: 1%;
+}
+.imgsLogo {
+  width: 80%;
+  height: auto;
+}
+#toShow {
+  background-color: #ddbebe;
 }
