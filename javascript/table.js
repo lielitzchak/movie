@@ -1,15 +1,5 @@
 let table = document.getElementById("teble");
-let allMovie = "/movies/all";
-async function getAllMovieFromApi(api, allMovie) {
-  try {
-    return await fetch(`${api}${allMovie}`).then((res) => {
-      return res.json();
-    });
-  } catch (error) {
-    return error;
-  }
-}
-getAllMovieFromApi(BASIC_API, allMovie)
+movieFromApi(BASIC_API, allMovie)
   .then((res) => {
     return showAllMovie(res.data);
   })
