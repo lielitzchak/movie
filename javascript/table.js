@@ -21,15 +21,3 @@ function showAllMovie(response) {
     </tr>`;
   }
 }
-
-// console.log(`${BASIC_API}${allMovie}`);
-// let x = {
-//   _id: "6182d48e7df14206307896b8",
-//   movieName: "Harry Potter",
-//   linkToMovie: "String",
-//   synopsis: "String hhhhhh",
-//   image: "https://wallpaperaccess.com/full/3421252.jpg",
-//   rating: 3,
-//   date: "2021-11-03T18:27:26.573Z",
-//   __v: 0,
-// };

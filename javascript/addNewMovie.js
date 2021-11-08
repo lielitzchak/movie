@@ -25,12 +25,3 @@ btnFormMovie.onclick = (e) => {
       return console.log(res);
     });
 };
-// !let x = {
-//   _id: "6187dfcd4eec870016e667fa",
-//   movieName: "avatar",
-//   rating: 4,
-//   image: "https://wallpapercave.com/wp/wp6542877.jpg",
-//   synopsis: "avatar is blue",
-//   date: "2021-11-07T14:16:45.900Z",
-//   _v: 0,
-// };
