@@ -33,9 +33,14 @@ body {
 }
 #serachSection {
   padding-top: 0.5%;
-  padding-left: 15%;
+  padding-left: 10%;
+}
+.options:hover {
+  background-color: yellow;
+  border-radius: 4%;
 }
 #searchInput {
+  margin-top: 3%;
   width: 80%;
   height: 32px;
   border-radius: 5px;
@@ -46,10 +51,17 @@ body {
   border-radius: 5px;
   height: 32px;
 }
+#selectsOption {
+  border-radius: 5px;
+
+  height: 30px;
+  width: 80px;
+}
 #loginRegister {
   display: flex;
   justify-content: space-around;
   align-items: baseline;
+  margin-top: 4%;
 }
 #loginRegister article {
   border-radius: 5px;
@@ -81,22 +93,28 @@ a {
   height: 25px;
   border-radius: 22px;
 }
-#formMovie input {
+.allCHangCart {
+  display: grid;
+  grid-template-columns: repeat(3, 33%);
+}
+.formMovie input {
   width: auto;
   height: 25px;
   border-radius: 4px;
 }
-#formMovie button {
+.formMovie button {
   width: 54px;
   height: 35px;
   border-radius: 4px;
 }
-#formMovie {
-  margin: auto;
-  width: 20%;
+.formMovie {
+  margin-left: 2%;
+  width: 80%;
   padding: 2%;
   font-size: 30px;
   border-radius: 14px;
+  margin-top: 2%;
+  margin-bottom: 4%;
   animation: shadow-inset-center 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 @keyframes shadow-inset-center {
@@ -117,7 +135,6 @@ a {
 .moviesCart {
   width: 100%;
   height: auto;
-  /* background-color: red; */
   height: auto;
   color: black;
 }
@@ -132,8 +149,6 @@ a {
 #teble {
   padding: 0.5% 1% 0 1%;
   width: 85%;
-  /* width: 20%; */
-  /* width: 98%; */
 }
 #teble tbody tr {
   height: 10px;
@@ -179,8 +194,6 @@ td {
   padding-left: 34%;
 }
 #sectionToMoviesCart {
-  /* display: inline-block; */
-  /* width: 240px; */
   text-align: center;
   display: grid;
   width: 98%;
@@ -204,7 +217,6 @@ td {
 }
 
 .inner-skew {
-  /* display: inline-block; */
   border-radius: 20px;
   overflow: hidden;
   padding: 4px;
@@ -233,4 +245,20 @@ td {
 }
 .popUp {
   display: none;
+}
+#sectionOf_ArticleStatic {
+  display: grid;
+  gap: 4px;
+  grid-template-columns: repeat(3, 30%);
+  margin-left: 10%;
+  margin-top: 3%;
+}
+.articleStatic {
+  background-color: var(--brown);
+  border-radius: 5px;
+}
+.imgHomePage {
+  padding: 2%;
+  width: 100%;
+  height: 100%;
 }
