@@ -12,11 +12,13 @@ btnFormMovie.onclick = (e) => {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
       movieName: movieName.value,
+      linkToMovie: movieLinkTo.value,
       rating: movieRating.value,
       image: movieImg.value,
       synopsis: movieSynopsis.value,
     }),
   };
+
   movieFromApi(BASIC_API, saveMovie, option)
     .then((res) => {
       return console.log(res);
