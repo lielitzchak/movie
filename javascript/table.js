@@ -1,6 +1,15 @@
 let table = document.getElementById("teble");
+movieFromApi(BASIC_API, allMovie)
+  .then((res) => {
+    console.log(res);
+    showAllMovie(res);
+  })
+  .catch((rej) => {
+    console.log(rej);
+  });
 function showAllMovie(response) {
-  for (let movie of response) {
+  console.log(response);
+  for (let movie of response.data) {
     table.innerHTML += `
     <tr>
       <td>${movie._id}</td>
@@ -13,12 +22,3 @@ function showAllMovie(response) {
     </tr>`;
   }
 }
-movieFromApi(BASIC_API, allMovie)
-  .then((res) => {
-    return showAllMovie(res.data);
-  })
-  .catch((rej) => {
-     rej;
-  });
-
-

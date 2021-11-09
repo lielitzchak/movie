@@ -6,24 +6,22 @@ let divHeaderHomePage = document.getElementById("divHeaderHomePage");
 function showErrorImg() {
   main.innerHTML = `<img id="errorImg500" src="../media/video/error 500.gif" alt="">`;
 }
-function getData(data) {
+
+function getData(api, goTo, option) {
   return new Promise((resolve, reject) => {
-    if (data < 600) {
-      resolve(data);
-    }
-    reject(showErrorImg());
+    fetch(`${api}${goTo}`, option)
+      .then((res) => res.json())
+      .then((res) => {
+        res ? resolve(res) : reject();
+        // console.log(res);
+      });
   });
 }
 async function movieFromApi(api, goTo, option) {
   try {
-    loadionImg();
-    return await fetch(`${api}${goTo}`, option).then((res) => {
-      return res.json();
-    });
+    return await getData(api, goTo, option);
   } catch {
     return showErrorImg();
-  } finally {
-    return stopLoadionImg();
   }
 }
 function loadionImg() {
@@ -51,7 +49,14 @@ function addHeader(div) {
       </nav>
     </header>`;
 }
-
+const IMG_HOME_PAGE = {
+  movieName: "spider-man homecoming",
+  rating: 7,
+  image: "",
+  synopsis: "avatar is blue",
+  // date: "2021-11-07T14:16:45.900Z",
+  __v: 0,
+};
 function showFooter(div) {
   div.innerHTML += `
     <section class="allLogos"> 
