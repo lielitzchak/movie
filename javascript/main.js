@@ -24,16 +24,16 @@ function getData(api, goTo, option) {
 //     return showErrorImg();
 //   }
 // }
-function loadionImg() {
-  return `<img src="../media/video/daoling time gif.gif" alt="">`;
-}
-function stopLoadionImg() {}
+// function loadionImg() {
+//   return `<img src="../media/video/daoling time gif.gif" alt="">`;
+// }
+// function stopLoadionImg() {}
 function addHeader(div) {
   div.innerHTML += `
     <header>
       <section id="headers">
-        <img class="imgHeaders"  src="https://did.li/LYC5q" alt="tech carrer logo" /><img class="imgHeaders"
-          src="https://did.li/jlxlC"
+        <img class="imgHeaders"  src="../madia/techCareere.png" alt="tech carrer logo" /><img class="imgHeaders"
+          src="../madia/indicome.png"
           alt="indicom"
         />
       </section>
@@ -52,21 +52,19 @@ function addHeader(div) {
 function showFooter(div) {
   div.innerHTML += `
     <section class="allLogos"> 
-        <a class="linkToContent" href="https://did.li/Q5lTY"><img src="../media/photos/linkedin.png" alt="linkedin" class="imgsLogo"></a>
-        <a class="linkToContent" href="https://did.li/WNarl"><img src="../media/photos/github.png"" alt="github" class="imgsLogo"></a>
-        <a class="linkToContent" href="mailto:liel.izcha321@gmail.com"><img src="../media/photos/gmail.png" alt="gmail" class="imgsLogo"></a>
-        <a class="linkToContent" href=""><img src="../media/photos/whatsapp.png" alt="whatsApp" class="imgsLogo"></a>
+        <a class="linkToContent" href="https://did.li/Q5lTY"><img src="../madia/linkedin.png" alt="linkedin" class="imgsLogo"></a>
+        <a class="linkToContent" href="https://did.li/WNarl"><img src="../madia/github.png"" alt="github" class="imgsLogo"></a>
+        <a class="linkToContent" href="mailto:liel.izcha321@gmail.com"><img src="../madia/gmail.png" alt="gmail" class="imgsLogo"></a>
+        <a class="linkToContent" href=""><img src="../madia/whatsapp.png" alt="whatsApp" class="imgsLogo"></a>
     </section>
     <section class="copyRight">  
-      <img class="copyRightImg" src="../media/photos/copyright.png" alt="whatsApp">
+      <img class="copyRightImg" src="../madia/copyright.png" alt="whatsApp">
       <p>liel itzchak</p>
     </section>
-    
-  
     `;
 }
 addHeader(divHeaderHomePage);
-
+showFooter(footer);
 // ! //////////////////////////////////////////////////////
 // !  //////////////////////////////////////////////////////
 // ! //////////////////////////////////////////////////////
