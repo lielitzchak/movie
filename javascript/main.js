@@ -12,18 +12,18 @@ function getData(api, goTo, option) {
     fetch(`${api}${goTo}`, option)
       .then((res) => res.json())
       .then((res) => {
-        res ? resolve(res) : reject();
-        // console.log(res);
+        res ? resolve(res) : reject(console.log("error"));
       });
   });
 }
-async function movieFromApi(api, goTo, option) {
-  try {
-    return await getData(api, goTo, option);
-  } catch {
-    return showErrorImg();
-  }
-}
+
+// async function movieFromApi(api, goTo, option) {
+//   try {
+//     return await getData(api, goTo, option);
+//   } catch {
+//     return showErrorImg();
+//   }
+// }
 function loadionImg() {
   return `<img src="../media/video/daoling time gif.gif" alt="">`;
 }
@@ -49,14 +49,6 @@ function addHeader(div) {
       </nav>
     </header>`;
 }
-const IMG_HOME_PAGE = {
-  movieName: "spider-man homecoming",
-  rating: 7,
-  image: "",
-  synopsis: "avatar is blue",
-  // date: "2021-11-07T14:16:45.900Z",
-  __v: 0,
-};
 function showFooter(div) {
   div.innerHTML += `
     <section class="allLogos"> 
