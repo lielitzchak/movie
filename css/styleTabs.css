@@ -19,7 +19,11 @@
   height: auto;
   color: black;
 }
-
+#searchBtn {
+  border-radius: 5px;
+  width: auto;
+  height: 30px;
+}
 .img-container {
   height: auto;
   width: auto;
@@ -53,3 +57,5 @@
   height: 200px;
   width: 200px;
 }
+
+/* //! text */
