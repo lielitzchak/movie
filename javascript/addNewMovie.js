@@ -1,30 +1,61 @@
-let btnFormMovie = document.getElementById("btnFormMovie");
+let tbnAddMovie = document.getElementById("tbnAddMovie");
+let tbnDeleteMovie = document.getElementById("tbnDeleteMovie");
+let btnUpdateMovie = document.getElementById("btnUpdateMovie");
+// let formAdd = document.getElementById("formAdd");
 let saveMovie = "/movies/saveMovie";
-btnFormMovie.onclick = (e) => {
-  e.preventDefault();
-  let movieName = document.getElementById("movieName");
-  let movieImg = document.getElementById("movieImg");
-  let movieSynopsis = document.getElementById("movieSynopsis");
-  let movieLinkTo = document.getElementById("movieLinkTo");
-  let movieRating = document.getElementById("movieRating");
-  const option = {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      movieName: movieName.value,
-      linkToMovie: movieLinkTo.value,
-      rating: movieRating.value,
-      image: movieImg.value,
-      synopsis: movieSynopsis.value,
-    }),
-  };
+class Movie {
+  movieName;
+  image;
+  synopsis;
+  linkToMovie;
+  rating;
+  constructor(movieName, image, synopsis, linkToMovie, rating) {
+    this.movieName = movieName;
+    this.image = image;
+    this.synopsis = synopsis;
+    this.linkToMovie = linkToMovie;
+    this.rating = rating;
+  }
+}
+//! add movie
 
-  movieFromApi(BASIC_API, saveMovie, option)
-    .then((res) => {
-      return console.log(res);
-    })
-    .catch((res) => {
-      return console.log(res);
-    })
-    .finally(() => stopLoadionImg());
+tbnAddMovie.onclick = (e) => {
+  e.preventDefault();
+  let nameInput = document.getElementById("movieName").value;
+  console.log(nameInput);
+  let inpInput = document.getElementById("movieImg").value;
+  let imageInput = document.getElementById("movieSynopsis").value;
+  let linkInp = document.getElementById("linkToMovie").value;
+  let ratingInp = document.getElementById("movieRating").value;
+  let newMovie = new Movie(nameInput, inpInput, imageInput, linkInp, ratingInp);
+  console.log(newMovie);
+  const option = {
+    method: "post",
+    body: JSON.stringify(newMovie),
+    headers: { "Content-Type": "application/json" },
+  };
+  console.log(option.body);
+  getData(BASIC_API, "/movies/saveMovie", option)
+    .then((res) => console.log(res))
+    .catch((rej) => console.log(rej));
 };
+
+//! // work/// delete movie
+tbnDeleteMovie.addEventListener("click", deleteWithId);
+
+function deleteWithId(e) {
+  e.preventDefault();
+  let __id = document.getElementById("__id").value;
+  console.log(__id);
+  const option = {
+    method: "DELETE",
+    headers: { "Content-Type": "application/json" },
+  };
+  getData(BASIC_API, `/movies/movie/${__id}`, option)
+    .then((res) => {
+      console.log(res);
+    })
+    .catch((rej) => {
+      console.log(rej);
+    });
+}
