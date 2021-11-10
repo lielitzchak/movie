@@ -31,3 +31,4 @@ apiFunction(idMovie, currentId).then((movie) => {
   </a>
 </article>`;
 });
+//! text
