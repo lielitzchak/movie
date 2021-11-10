@@ -1,62 +1,9 @@
 let idMovie = "/movies/movie/";
-// let main = document.getElementById("main");
 let currentId = location.search.substr(4);
-// const listOfMovies = [
-//   {
-//     _id: "1",
-//     movieName: "Movie 1",
-//     rating: "5",
-//     synopsis: "something",
-//     image: "",
-//   },
-//   {
-//     _id: "2",
-//     movieName: "Movie 2",
-//     rating: "5",
-//     synopsis: "something",
-//     image: "",
-//   },
-//   {
-//     _id: "3",
-//     movieName: "Movie 3",
-//     rating: "5",
-//     synopsis: "something",
-//     image: "",
-//   },
-//   {
-//     _id: "4",
-//     movieName: "Movie 4",
-//     rating: "5",
-//     synopsis: "something",
-//     image: "",
-//   },
-//   {
-//     _id: "5",
-//     movieName: "Movie 5",
-//     rating: "5",
-//     synopsis: "something",
-//     image: "",
-//   },
-//   {
-//     _id: "6",
-//     movieName: "Movie 6",
-//     rating: "5",
-//     synopsis: "something",
-//     image: "",
-//   },
-//   {
-//     _id: "7",
-//     movieName: "Movie 7",
-//     rating: "5",
-//     synopsis: "something",
-//     image: "",
-//   },
-// ];
 
 async function apiFunction(goTo, id) {
   try {
     return await fetch(getData(BASIC_API, `${goTo}${id}`));
-    // return { data: listOfMovies.find((m) => m._id === id) };
   } catch (error) {
     return error;
   }
