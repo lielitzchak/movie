@@ -1,5 +1,5 @@
 let table = document.getElementById("teble");
-movieFromApi(BASIC_API, allMovie)
+getData(BASIC_API, allMovie)
   .then((res) => {
     console.log(res);
     showAllMovie(res);
@@ -9,6 +9,7 @@ movieFromApi(BASIC_API, allMovie)
   });
 function showAllMovie(response) {
   console.log(response);
+  console.log(response.data);
   for (let movie of response.data) {
     table.innerHTML += `
     <tr>
