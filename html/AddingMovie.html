@@ -5,16 +5,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/style.css">
   </head>
   <body>
     <header id="divHeaderHomePage"></header>
     <main id="main">
-      <div id="toShow">
-        <section id="formMovie">
-          <form>
+      <section class="allCHangCart">
+        <article class="formMovie">
+          <h2>add movie</h2>
+          <form id="formAdd">
             <label for="movieName">name of movie</label> <br />
             <input id="movieName" type="text" /><br />
+            <label for="movieImg">image</label> <br />
+            <input id="movieImg" type="text" /><br />
+            <label for="movieSynopsis">synopsis</label> <br />
+            <input id="movieSynopsis" type="text" /><br />
+            <label for="linkToMovie">linkToMovie</label> <br />
+            <input id="linkToMovie" type="text" /><br />
+            <label for="movieRating">rating</label> <br />
+            <input id="movieRating" type="text" /><br />
+            <button type="submit" id="tbnAddMovie">click</button>
+          </form>
+        </article>
+        <article class="formMovie">
+          <h2>delete movie</h2>
+          <form>
+            <label for="__id">id</label> <br />
+            <input id="__id" type="text" /><br />
+            <button id="tbnDeleteMovie">click</button>
+          </form>
+        </article>
+        <article class="formMovie">
+          <h2>update movie</h2>
+          <form>
+            <label for="movieName">name of movie</label> <br />
+            <input  id="movieName" type="text" /><br />
             <label for="movieImg">image</label> <br />
             <input id="movieImg" type="text" /><br />
             <label for="movieSynopsis">synopsis</label> <br />
@@ -23,13 +48,12 @@
             <input id="movieLinkTo" type="text" /><br />
             <label for="movieRating">rating</label> <br />
             <input id="movieRating" type="text" /><br />
-            <button id="btnFormMovie">click</button>
+            <button id="btnUpdateMovie">click</button>
           </form>
-        </section>
-      </div>
+        </article>
+      </section>
     </main>
     <footer id="footer"></footer>
     <script src="../javascript/main.js"></script>
-    <script src="../javascript/addNewMovie.js"></script>
   </body>
 </html>
