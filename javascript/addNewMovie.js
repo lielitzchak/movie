@@ -44,7 +44,7 @@ tbnDeleteMovie.addEventListener("click", deleteWithId);
 
 function deleteWithId(e) {
   e.preventDefault();
-  let _id = document.getElementById("_id").value;
+  let __id = document.getElementById("_id").value;
   console.log(__id);
   const option = {
     method: "DELETE",

@@ -1,0 +1,21 @@
+#sectionToIdTeble {
+  width: 80%;
+  height: auto;
+  padding-right: 440px;
+  margin-right: 4%;
+}
+#teble {
+  padding-right: 44%;
+}
+#teble tr:nth-child(odd),
+td {
+  width: 100%;
+  background-color: #6c4a4a38;
+}
+#teble tr th {
+  width: 10%;
+}
+.imgTable {
+  width: 40px;
+  height: auto;
+}

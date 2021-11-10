@@ -1,0 +1,55 @@
+#sortBy {
+  margin-top: 1%;
+  display: flex;
+  justify-content: space-around;
+}
+#sectionToMoviesCart {
+  display: grid;
+  text-align: center;
+  width: 98%;
+  margin-left: 2%;
+  grid-template-columns: repeat(3, 32%);
+  gap: 4px;
+  margin-top: 3%;
+}
+
+.moviesCart {
+  width: 100%;
+  height: auto;
+  height: auto;
+  color: black;
+}
+
+.img-container {
+  height: auto;
+  width: auto;
+  overflow: hidden;
+  border-radius: 0px 0px 20px 20px;
+  display: inline-block;
+}
+
+.img-container img {
+  transform: skew(0deg, -13deg);
+  height: 350px;
+  margin: -35px 0px 0px -70px;
+}
+.text-container {
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+  padding: 120px 20px 20px 20px;
+  border-radius: 20px;
+  background: #fff;
+  margin: -120px 0px 0px 0px;
+  line-height: 19px;
+  font-size: 14px;
+}
+.inner-skew {
+  border-radius: 20px;
+  overflow: hidden;
+  padding: 4px;
+  transform: skew(0deg, 13deg);
+  font-size: 0px;
+  margin: 30px 0px 0px 0px;
+  background: #c8c2c2;
+  height: 200px;
+  width: 200px;
+}
