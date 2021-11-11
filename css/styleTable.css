@@ -6,6 +6,9 @@
 }
 #teble {
   padding-right: 44%;
+  margin-left: 3%;
+  margin-right: 5%;
+  margin-top: 2%;
 }
 #teble tr:nth-child(odd),
 td {
@@ -16,7 +19,6 @@ td {
   width: 10%;
 }
 .imgTable {
-  width: 40px;
+  width: 220px;
   height: auto;
 }
-/* //! text */
