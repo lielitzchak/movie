@@ -2,15 +2,6 @@ let idMovie = "/movies/movie/";
 let currentId = location.search.substr(4);
 console.log(currentId);
 
-async function apiFunction(goTo, _id) {
-  try {
-    return await fetch(getData(BASIC_API, `${goTo}${_id}`));
-  } catch (error) {
-    return error;
-  }
-}
-
-//! location its only for address
 getData(BASIC_API, `/movies/movie/${currentId}`).then((movie) => {
   main.innerHTML = `
   <article class="singleMovie">

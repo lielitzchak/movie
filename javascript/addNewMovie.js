@@ -15,7 +15,6 @@ class Movie {
     this.rating = _rating;
   }
 }
-//! add movie
 tbnAddMovie.addEventListener("click", addNewMovie);
 function addNewMovie(e) {
   e.preventDefault();
@@ -41,7 +40,6 @@ function addNewMovie(e) {
     });
 }
 
-// !
 
 btnUpdateMovie.addEventListener("click", updateMovie);
 function updateMovie(e) {
@@ -68,7 +66,6 @@ function updateMovie(e) {
     });
 }
 
-//! // work/// delete movie
 tbnDeleteMovie.addEventListener("click", deleteWithId);
 function deleteWithId(e) {
   e.preventDefault();

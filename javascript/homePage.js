@@ -30,7 +30,6 @@ function searchByName() {
   let input, filter;
   input = searchInput;
   filter = input.value;
-  //   toUpperCase();
   getData(BASIC_API, `/movies/movie/searchByName/${filter}`).then(
     (response) => {
       sectionOf_ArticleStatic.innerHTML = "";

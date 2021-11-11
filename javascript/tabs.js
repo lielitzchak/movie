@@ -7,7 +7,6 @@ function showInWindow(resolve) {
   for (const movie of resolve.data) {
     sectionToMoviesCart.innerHTML += `
     <article class="moviesCart">
-      <a href="../html/dataId.html?id=${movie._id}">
         <section class="img-container">
           <div class="img-inner">
               <div class="inner-skew">
@@ -19,10 +18,9 @@ function showInWindow(resolve) {
               <h3>${movie.movieName}</h3>
             <div>
               <p>${movie.rating}</p> 
-              <button id="${movie._id}" class="showDetails">see all details</button>
+              <button id="${movie._id}" class="showDetails"><a href="../html/dataId.html?id=${movie._id}">see all details </a></button>
           </div>
         </section>
-      </a>
     </article>
 `;
   }
