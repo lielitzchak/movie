@@ -2,9 +2,13 @@ let searchInput = document.getElementById("searchInput");
 
 async function getMovieById(id, options) {
   try {
+    loadingIMg();
     return await fetch(BASIC_API, `/movies/movie/${id}`, options)
       .then((res) => res.json())
-      .then((res) => console.log(res));
+      .then((res) => console.log(res))
+      .finally(() => {
+        stopLoadingImg();
+      });
   } catch (err) {
     return err;
   }

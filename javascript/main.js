@@ -3,8 +3,12 @@ const allMovie = "/movies/all";
 let footer = document.getElementById("footer");
 let main = document.getElementById("main");
 let divHeaderHomePage = document.getElementById("divHeaderHomePage");
-function showErrorImg() {
-  main.innerHTML = `<img id="errorImg500" src="../media/video/error 500.gif" alt="">`;
+function loadingIMg() {
+  main.innerHTML = `<img id="loadingImgGif" src="https://icon-library.com/images/waiting-icon-gif/waiting-icon-gif-13.jpg" alt=""/>`;
+}
+function stopLoadingImg() {
+  let loadingIMg = document.getElementById("loadingIMg");
+  loadingIMg.style.display = "block";
 }
 
 function getData(api, goTo, option) {

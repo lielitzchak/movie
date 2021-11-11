@@ -1,24 +1,30 @@
 #sectionToIdTeble {
-  width: 80%;
-  height: auto;
-  padding-right: 440px;
-  margin-right: 4%;
+  table-layout: fixed;  width: 100% ;
+  /* padding: 2%; */
 }
 #teble {
-  padding-right: 44%;
-  margin-left: 3%;
-  margin-right: 5%;
+  width: 100%;
+  padding-right: 4%;
+  margin-left: 2%;
+  margin-right: 2%;
   margin-top: 2%;
 }
+
 #teble tr:nth-child(odd),
 td {
-  width: 100%;
   background-color: #6c4a4a38;
 }
-#teble tr th {
-  width: 10%;
+#teble tbody td{
+  /* background-color: yellow; */
 }
 .imgTable {
   width: 220px;
   height: auto;
+}
+
+
+td {
+  width: 10% ;
+  padding: 4px;
+
 }
