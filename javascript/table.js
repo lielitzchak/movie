@@ -17,7 +17,7 @@ function showAllMovie(response) {
       <td>${movie.movieName}</td>
       <td><img class="imgTable" src="${movie.image}" alt=""></td>
       <td>${movie.synopsis}</td>
-      <td>${movie.linkToMovie}</td>
+      <td><button><a href="${movie.linkToMovie}">see more details</a></button></td>
       <td>${movie.rating}</td>
       <td>${movie.date}</td>
     </tr>`;
