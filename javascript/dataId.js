@@ -1,16 +1,17 @@
 let idMovie = "/movies/movie/";
 let currentId = location.search.substr(4);
+console.log(currentId);
 
-async function apiFunction(goTo, id) {
+async function apiFunction(goTo, _id) {
   try {
-    return await fetch(getData(BASIC_API, `${goTo}${id}`));
+    return await fetch(getData(BASIC_API, `${goTo}${_id}`));
   } catch (error) {
     return error;
   }
 }
 
 //! location its only for address
-apiFunction(idMovie, currentId).then((movie) => {
+getData(BASIC_API, `/movies/movie/${currentId}`).then((movie) => {
   main.innerHTML = `
   <article class="singleMovie">
   <a href="../html/dataId.html?id=${movie.data._id}">
@@ -31,4 +32,3 @@ apiFunction(idMovie, currentId).then((movie) => {
   </a>
 </article>`;
 });
-//! text
