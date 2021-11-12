@@ -8,7 +8,6 @@ getData(BASIC_API, allMovie)
     console.log(rej);
   });
 function showAllMovie(response) {
-  console.log(response);
   console.log(response.data);
   for (let movie of response.data) {
     table.innerHTML += `

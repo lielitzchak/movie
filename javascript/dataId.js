@@ -1,11 +1,8 @@
 let idMovie = "/movies/movie/";
 let currentId = location.search.substr(4);
-console.log(currentId);
-
 getData(BASIC_API, `/movies/movie/${currentId}`).then((movie) => {
   main.innerHTML = `
   <article class="singleMovie">
-  <a href="../html/dataId.html?id=${movie.data._id}">
     <section class="singleImg">
       <div class="img-inner">
           <div class="styleToImg">
@@ -16,10 +13,11 @@ getData(BASIC_API, `/movies/movie/${currentId}`).then((movie) => {
     <section class="text-container">
           <h3>${movie.data.movieName}</h3>
         <div>
-          <p>${movie.data.rating}</p> 
-         <a href="../html/tabs.html"> <button id="${movie.data._id}" class="showDetailsId">back to all movies</button></a>
+        <p><a href="${movie.data.linkToMovie}"><b> link To see the Movie</b></a></p> 
+        <p><b>synopsis:</b> ${movie.data.synopsis}</p> 
+        <p><b>rating:</b> ${movie.data.rating}</p> 
+        <button id="${movie.data._id}" class="showDetailsId"> <a href="../html/tabs.html">back to all movies</a></button>
       </div>
     </section>
-  </a>
-</article>`;
+  </article>`;
 });
