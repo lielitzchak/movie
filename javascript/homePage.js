@@ -1,4 +1,5 @@
 let searchInput = document.getElementById("searchInput");
+let selectsOption = document.getElementById("selectsOption");
 
 async function getMovieById(id, options) {
   try {
@@ -13,32 +14,26 @@ async function getMovieById(id, options) {
     return err;
   }
 }
-searchInput.oninput = () => {
-  select();
+
+selectsOption.onchange = () => {
+  switch (selectsOption.value) {
+    case "search by name":
+      return searchByName();
+    case "search by id":
+      return searchById();
+    case "search by date":
+      return searchByDate();
+    default:
+      break;
+  }
 };
-let selectsOption = document.getElementById("selectsOption");
-function select() {
-  selectsOption.onchange = () => {
-    switch (selectsOption.value) {
-      case "search by name":
-        return searchByName();
-      case "search by id":
-        return searchById();
-      case "tree":
-        return console.log("tree");
-      default:
-        break;
-    }
-  };
-}
+
 let sectionOf_ArticleStatic = document.getElementById(
   "sectionOf_ArticleStatic"
 );
 function searchByName() {
-  let input, filter;
-  input = searchInput;
-  filter = input.value;
-  getData(BASIC_API, `/movies/movie/searchByName/${filter}`)
+  console.log("name");
+  getData(BASIC_API, `/movies/movie/searchByName/${searchInput.value}`)
     .then((response) => {
       console.log(response);
     })
@@ -67,4 +62,7 @@ function searchById() {
   //       <article class="articleStatic"><img class="imgHomePage" src="${response.data.image}" alt=""></article>
   //      `;
   // });
+}
+function searchByDate() {
+  console.log("search by date ");
 }
