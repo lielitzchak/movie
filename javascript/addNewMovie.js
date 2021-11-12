@@ -33,7 +33,7 @@ function addNewMovie(e) {
 
   getData(BASIC_API, `/movies/saveMovie`, option)
     .then((res) => {
-      alert("its work")
+      alert("The film was successfully added")
       console.log(res);
     })
     .catch((rej) => {
