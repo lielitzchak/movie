@@ -1,6 +1,6 @@
 #sectionToIdTeble {
-  table-layout: fixed;  width: 100% ;
-  /* padding: 2%; */
+  table-layout: fixed;
+  width: 100%;
 }
 #teble {
   width: 100%;
@@ -14,17 +14,12 @@
 td {
   background-color: #6c4a4a38;
 }
-#teble tbody td{
-  /* background-color: yellow; */
-}
 .imgTable {
   width: 220px;
   height: auto;
 }
 
-
 td {
-  width: 10% ;
+  width: 10%;
   padding: 4px;
-
 }

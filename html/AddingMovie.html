@@ -11,9 +11,9 @@
   <body>
     <header id="divHeaderHomePage"></header>
     <main id="main">
-      <section class="allCHangCart">
+      <!-- <section class="allCHangCart"> -->
         <article class="formMovie">
-          <h2>add movie</h2>
+          <h2 id="title">add movie</h2>
           <form id="formAdd">
             <label>name of movie</label> <br />
             <input id="movieName" type="text" /><br />
@@ -22,21 +22,21 @@
             <label>synopsis</label> <br />
             <input id="movieSynopsis" type="text" /><br />
             <label>link To Movie</label> <br />
-            <input id="linkToMovie" type="text" /><br />
+            <input id="linkToMovie" type="url" /><br />
             <label>rating</label> <br />
-            <input id="movieRating" type="text" /><br />
+            <input id="movieRating" type="number" /><br /> <br>
             <button type="submit" id="tbnAddMovie">click</button>
           </form>
         </article>
-        <article class="formMovie">
+        <!-- <article class="formMovie">
           <h2>delete movie</h2>
           <form>
             <label for="__id">id</label> <br />
             <input id="__id" type="text" /><br />
             <button id="tbnDeleteMovie">click</button>
           </form>
-        </article>
-        <article class="formMovie">
+        </article> -->
+        <!-- <article class="formMovie">
           <h2>update movie</h2>
           <form>
             <label>id</label> <br />
@@ -53,8 +53,8 @@
             <input id="movieRating" type="text" /><br />
             <button id="btnUpdateMovie">click</button>
           </form>
-        </article>
-      </section>
+        </article> -->
+      <!-- </section> -->
     </main>
     <footer id="footer"></footer>
     <script src="../javascript/main.js"></script>
