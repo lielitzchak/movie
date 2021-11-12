@@ -54,33 +54,35 @@ getData(BASIC_API, allMovie).then((resolve) => {
 //   inBox.innerHTML = "";
 // });
 
-// sortBy.oninput = () => {
-//   addOption();
-// };
+sortBy.oninput = () => {
+  addOption();
+};
 
-// function addOption() {
-//   switch (select.value) {
-//     case "sort by top rating":
-//       getData(BASIC_API, allMovie).then((response) => {
-// console.log(response.data);
-//         response.data.sort((a, b) => {
-//           return b.rating - a.rating;
-//         });
-//       });
-//       console.log("sort by top rating");
-//       return;
-//     case "sort by name":
-//       getData(BASIC_API, allMovie).then((response) => {
-//         response.data.sort((a, b) => {
-//           if (a.movieName < b.movieName) return -1;
-//         });
-//       });
-//       console.log("sort by name");
-//       return;
-//     case "sort by date":
-//       return console.log("sort by date");
-//   }
-// }
+function addOption() {
+  switch (select.value) {
+    case "sort by top rating":
+      // console.log("sort by top rating");
+      getData(BASIC_API, allMovie).then((response) => {
+        // console.log(response.data);
+        let sortMovie = response.data.sort((a, b) => {
+          return b.rating - a.rating;
+        });
+        showInWindow(sortMovie);
+        console.log(sortMovie);
+      });
+      return;
+    case "sort by name":
+      // getData(BASIC_API, allMovie).then((response) => {
+      //   response.data.sort((a, b) => {
+      //     if (a.movieName < b.movieName) return -1;
+      //   });
+      // });
+      console.log("sort by name");
+      return;
+    case "sort by date":
+      return console.log("sort by date");
+  }
+}
 // function deleteMovie(id) {
 //   confirm("are you sure you want to delete ");
 //   let options = {
