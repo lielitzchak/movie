@@ -1,27 +1,30 @@
-let searchInput = document.getElementById("searchInput");
 let selectsOption = document.getElementById("selectsOption");
-
-async function getMovieById(id, options) {
-  try {
-    loadingIMg();
-    return await fetch(BASIC_API, `/movies/movie/${id}`, options)
-      .then((res) => res.json())
-      .then((res) => console.log(res))
-      .finally(() => {
-        stopLoadingImg();
-      });
-  } catch (err) {
-    return err;
-  }
-}
+getData(BASIC_API, "/movies/all")
+  .then((response) => {
+    for (const movie of response.data) {
+      sectionOf_ArticleStatic.innerHTML += `
+      <article class="articleStatic">
+          <a href="${movie.linkToMovie}">
+            <img class="imgHomePage" src="${movie.image}" alt="">
+            <p>${movie.movieName}</p>
+          </a>
+      </article>
+      `;
+    }
+  })
+  .catch((response) => {
+    console.log(response);
+  });
 
 selectsOption.onchange = () => {
+  let searchInput = document.getElementById("searchInput");
   switch (selectsOption.value) {
     case "search by name":
-      return searchByName();
+      return searchByName(searchInput.value);
     case "search by id":
-      return searchById();
+      return searchById(searchInput.value);
     case "search by date":
+      console.log("search by date");
       return searchByDate();
     default:
       break;
@@ -31,39 +34,63 @@ selectsOption.onchange = () => {
 let sectionOf_ArticleStatic = document.getElementById(
   "sectionOf_ArticleStatic"
 );
-function searchByName() {
-  console.log("name");
-  getData(BASIC_API, `/movies/movie/searchByName/${searchInput.value}`)
-    .then((response) => {
-      console.log(response);
-    })
-    .then((response) => {
-      sectionOf_ArticleStatic.innerHTML = "";
-      for (const movie of response.data) {
-        console.log(movie);
-        sectionOf_ArticleStatic.innerHTML += `
-        <article class="articleStatic">
-          <img class="imgHomePage" src="${movie.image}" alt="">
-        </article>
-   `;
-      }
-    });
+async function searchByName(nameOfMOvie) {
+  try {
+    loadingIMg();
+    return await getData(BASIC_API, `/movies/movie/searchByName/${nameOfMOvie}`)
+      .then((response) => {
+        console.log(response.data);
+        for (const movie of response.data) {
+          sectionOf_ArticleStatic.innerHTML += `
+          <article class="articleStatic">
+              <a href="${movie.linkToMovie}">
+                <img class="imgHomePage" src="${movie.image}" alt="">
+                <p>${movie.movieName}</p>
+              </a>
+          </article>
+          `;
+        }
+      })
+      .catch((res) => {
+        console.log(res);
+      })
+      .finally(() => {
+        stopLoadingImg();
+      });
+  } catch (error) {
+    console.log(error);
+  }
+  console.log(nameOfMOvie);
 }
-function searchById() {
-  console.log("search by id ");
-  // let input, filter;
-  // input = searchInput.value;
-  // filter = input.value;
-  // getData(BASIC_API, `/movies/movie/${input}`).then((response) => {
-  //   console.log(response.data);
-  //   sectionOf_ArticleStatic.innerHTML = "";
 
-  //   sectionOf_ArticleStatic.innerHTML += `
-  //       <article class="articleStatic"><img class="imgHomePage" src="${response.data.image}" alt=""></article>
-  //      `;
-  // });
+async function searchById(idOfMOvie) {
+  try {
+    loadingIMg();
+    return await getData(BASIC_API, `/movies/movie/${idOfMOvie}`)
+      .then((response) => {
+        console.log(response.data);
+        for (const movie of response.data) {
+          sectionOf_ArticleStatic.innerHTML += `
+          <article class="articleStatic">
+              <a href="${movie.linkToMovie}">
+                <img class="imgHomePage" src="${movie.image}" alt="">
+                <p>${movie.movieName}</p>
+              </a>
+          </article>
+          `;
+        }
+      })
+      .catch((res) => {
+        console.log(res);
+      })
+      .finally(() => {
+        stopLoadingImg();
+      });
+  } catch (error) {
+    console.log(error);
+  }
+  console.log(idOfMOvie);
 }
 function searchByDate() {
   console.log("search by date ");
 }
-

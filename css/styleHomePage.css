@@ -30,15 +30,19 @@
 }
 
 .articleStatic {
+  margin-bottom: 10%;
   background-color: var(--brown);
   border-radius: 5px;
 }
+.articleStatic p {
+  text-align: center;
+}
 .imgHomePage {
   padding: 2%;
-  width: 100%;
+  width: 98%;
   height: 100%;
-  border-radius: 0px 0px 20px 20px;
-  display: inline-block;
+  border-radius: 15px;
+  /* display: inline-block; */
 }
 #loginRegister {
   display: flex;

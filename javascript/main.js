@@ -4,11 +4,11 @@ let footer = document.getElementById("footer");
 let main = document.getElementById("main");
 let divHeaderHomePage = document.getElementById("divHeaderHomePage");
 function loadingIMg() {
-  main.innerHTML = `<img id="loadingImgGif" src="https://icon-library.com/images/waiting-icon-gif/waiting-icon-gif-13.jpg" alt=""/>`;
+  sectionOf_ArticleStatic.innerHTML = `<img id="loadingImgGif" src="https://icon-library.com/images/waiting-icon-gif/waiting-icon-gif-13.jpg" alt=""/>`;
 }
 function stopLoadingImg() {
-  let loadingIMg = document.getElementById("loadingIMg");
-  loadingIMg.style.display = "block";
+  let loadingImgGif = document.getElementById("loadingImgGif");
+  loadingImgGif.style.display = "none";
 }
 
 function getData(api, goTo, option) {
@@ -16,7 +16,7 @@ function getData(api, goTo, option) {
     fetch(`${api}${goTo}`, option)
       .then((res) => res.json())
       .then((res) => {
-        res ? resolve(res) : reject(console.log("error"));
+        res!=[] ? resolve(res) : reject(console.log("error"));
       });
   });
 }
