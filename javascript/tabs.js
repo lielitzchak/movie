@@ -63,14 +63,22 @@ function addOption() {
       });
       return;
     case "sort by name":
-      // getData(BASIC_API, allMovie).then((response) => {
-      //   let sortMovie = response.data.sort((a, b) => {
-      //     return a.movieName - b.movieName;
-      //   });
-      //   printItems(sortMovie);
-      // });
+      getData(BASIC_API, allMovie).then((response) => {
+        let sortMovie = response.data.sort((a, b) => {
+          let nameA = a.movieName.toUpperCase();
+          let nameB = b.movieName.toUpperCase();
+          if (nameA < nameB) {
+            return -1;
+          }
+          if (nameA > nameB) {
+            return 1;
+          }
+        });
+        console.log(sortMovie);
+        printItems(sortMovie);
+      });
       console.log("sort by name");
-    // return;
+      return;
     case "sort by date":
       getData(BASIC_API, allMovie).then((response) => {
         let sortMovie = response.data.sort((a, b) => {

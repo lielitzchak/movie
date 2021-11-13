@@ -23,9 +23,6 @@ selectsOption.onchange = () => {
       return searchByName(searchInput.value);
     case "search by id":
       return searchById(searchInput.value);
-    case "search by date":
-      console.log("search by date");
-      return searchByDate();
     default:
       break;
   }
@@ -88,7 +85,4 @@ async function searchById(id) {
     console.log(error);
   }
   console.log(id);
-}
-function searchByDate() {
-  console.log("search by date ");
 }
