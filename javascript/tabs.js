@@ -20,7 +20,7 @@ function showInWindow(resolve) {
               <p>${movie.rating}</p> 
               <button id="${movie._id}" class="showDetails">
               <a href="../html/dataId.html?id=${movie._id}">see all details </a></button>
-              <button onclick="deleteMovie('${movie._id}')" class="id_movie">
+              <button onclick="deleteMovieById('${movie._id}')" class="id_movie">
               delete this movie
               </button>
           </div>
@@ -29,7 +29,7 @@ function showInWindow(resolve) {
 `;
   }
 }
-function deleteMovie(id) {
+function deleteMovieById(id) {
   console.log(id);
   confirm("are you sure you want to delete? ");
   let options = {
@@ -41,18 +41,12 @@ function deleteMovie(id) {
   if (alert) {
     location.reload();
   }
+  return;
 }
 
 getData(BASIC_API, allMovie).then((resolve) => {
   showInWindow(resolve);
 });
-// let delete_ = document.getElementsByClassName("id");
-// console.log(delete_);
-
-// exit.addEventListener("click", () => {
-//   boxBackground.style.display = "none";
-//   inBox.innerHTML = "";
-// });
 
 sortBy.oninput = () => {
   addOption();
@@ -61,9 +55,7 @@ sortBy.oninput = () => {
 function addOption() {
   switch (select.value) {
     case "sort by top rating":
-      // console.log("sort by top rating");
       getData(BASIC_API, allMovie).then((response) => {
-        // console.log(response.data);
         let sortMovie = response.data.sort((a, b) => {
           return b.rating - a.rating;
         });
