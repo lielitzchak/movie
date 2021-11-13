@@ -59,50 +59,54 @@ function addOption() {
         let sortMovie = response.data.sort((a, b) => {
           return b.rating - a.rating;
         });
-        showInWindow(sortMovie);
-        console.log(sortMovie);
+        printItems(sortMovie);
       });
       return;
     case "sort by name":
       // getData(BASIC_API, allMovie).then((response) => {
-      //   response.data.sort((a, b) => {
-      //     if (a.movieName < b.movieName) return -1;
+      //   let sortMovie = response.data.sort((a, b) => {
+      //     return a.movieName - b.movieName;
       //   });
+      //   printItems(sortMovie);
       // });
       console.log("sort by name");
-      return;
+    // return;
     case "sort by date":
-      return console.log("sort by date");
+      getData(BASIC_API, allMovie).then((response) => {
+        let sortMovie = response.data.sort((a, b) => {
+          return b.date - a.date;
+        });
+        console.log(sortMovie);
+        printItems(sortMovie);
+      });
+      return;
   }
 }
-// function deleteMovie(id) {
-//   confirm("are you sure you want to delete ");
-//   let options = {
-//     method: `DELETE`,
-//   };
-//   getApi(`https://moviesmern.herokuapp.com/movies/movie/${id}`, options)
-//     .then((res) => console.log(res))
-//     .then(alert("movie was deleted"));
-//   if (alert) {
-//     location.reload();
-//   }
-// }
 
-// exit.addEventListener("click", () => {
-//   boxBackground.style.display = "none";
-//   inBox.innerHTML = "";
-// });
-
-// function deleteWithId(_id) {
-//   const option = {
-//     method: "DELETE",
-//     headers: { "Content-Type": "application/json" },
-//   };
-//   getData(BASIC_API, `/movies/movie/${_id}`, option)
-//     .then((res) => {
-//       console.log(res);
-//     })
-//     .catch((rej) => {
-//       console.log(rej);
-//     });
-// }
+function printItems(sort) {
+  sectionToMoviesCart.innerHTML = "";
+  for (const movie of sort) {
+    sectionToMoviesCart.innerHTML += `
+    <article class="moviesCart">
+        <section class="img-container">
+          <div class="img-inner">
+              <div class="inner-skew">
+                <img class="imgTabs" src="${movie.image}" alt="">  
+              </div>
+          </div>
+        </section>
+        <section class="text-container">
+              <h3>${movie.movieName}</h3>
+            <div>
+              <p>${movie.rating}</p> 
+              <button id="${movie._id}" class="showDetails">
+              <a href="../html/dataId.html?id=${movie._id}">see all details </a></button>
+              <button onclick="deleteMovieById('${movie._id}')" class="id_movie">
+              delete this movie
+              </button>
+          </div>
+        </section>
+    </article>
+`;
+  }
+}
