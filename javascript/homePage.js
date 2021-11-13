@@ -63,22 +63,20 @@ async function searchByName(nameOfMOvie) {
   console.log(nameOfMOvie);
 }
 
-async function searchById(idOfMOvie) {
+async function searchById(id) {
   try {
     loadingIMg();
-    return await getData(BASIC_API, `/movies/movie/${idOfMOvie}`)
+    return await getData(BASIC_API, `/movies/movie/${id}`)
       .then((response) => {
         console.log(response.data);
-        for (const movie of response.data) {
-          sectionOf_ArticleStatic.innerHTML += `
+        sectionOf_ArticleStatic.innerHTML = `
           <article class="articleStatic">
-              <a href="${movie.linkToMovie}">
-                <img class="imgHomePage" src="${movie.image}" alt="">
-                <p>${movie.movieName}</p>
+              <a href="${response.data.linkToMovie}">
+                <img class="imgHomePage" src="${response.data.image}" alt="">
+                <p>${response.data.movieName}</p>
               </a>
           </article>
           `;
-        }
       })
       .catch((res) => {
         console.log(res);
@@ -89,7 +87,7 @@ async function searchById(idOfMOvie) {
   } catch (error) {
     console.log(error);
   }
-  console.log(idOfMOvie);
+  console.log(id);
 }
 function searchByDate() {
   console.log("search by date ");
